@@ -114,6 +114,8 @@ unanswered_chats.html
 *.db-wal
 *.code-workspace
 
+*.zip
+
 odesi_tables.py
 */*__init__.py
 try_mysql*
