@@ -71,4 +71,5 @@ with open('downloads.json', 'w', encoding='utf-8') as f:
 #TODO Load to DOCKER to connect to DB
 #           #WHY: 
 #TODO Load to DOCKER for app.py (Flask)
+#TODO ----create package for top 10 downloads
 #TODO quick quick KSKS
