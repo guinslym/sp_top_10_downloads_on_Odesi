@@ -1,0 +1,16 @@
+version: "2"
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  app:
+    build: ./app
+    links:
+      - db
+    ports:
+      - "5000:5000"
+
+    

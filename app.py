@@ -4,8 +4,19 @@ from flask import Flask, Response, send_from_directory
 from dateparser import parse
 import json
 
+import pymysql
+import pymysql.cursors
+
 from environs import Env
 env = Env()
+
+with open('secrets.json') as json_file:
+        data = json.load(json_file)
+
+user = data["USER"]
+password = data["PASSWORD"]
+db = data["DATABASE"]
+
 
 # Create the flask server
 app = Flask(__name__)
@@ -14,13 +25,17 @@ def get_top_downloads():
     # Read .env into os.environ
     env.read_env()
     environment = env("ENVIRONMENT", "STAGING")
-    
+
     if environment == "STAGING":
         with open('downloads.json') as json_file:
             downloads = json.load(json_file)
     else:
         raise ValueError('A very specific bad thing happened')# throw error 
     return downloads
+
+@app.route('/')
+def index():
+    return "<h1>Hello world</h1>"
 
 @app.route('/rss')
 def rss():
