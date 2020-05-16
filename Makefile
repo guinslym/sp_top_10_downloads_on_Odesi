@@ -15,6 +15,15 @@ readme:
 info-readme:
 	echo "\nCommit the Readme file and push this repository on Github\n"
 
+.PHONY: runserver
+runserver:
+	echo "run python3 server"
+	poetry run python -m http.server
+info-runserver:
+	echo "\nRun a python server\n"
+	
+
+
 
 .PHONY: setup
 setup:
