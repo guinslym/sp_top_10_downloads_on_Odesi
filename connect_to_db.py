@@ -64,12 +64,3 @@ for data in result:
 with open('downloads.json', 'w', encoding='utf-8') as f:
     json.dump(result, f, ensure_ascii=False, indent=4)
 
-#TODO ---Load json
-#TODO ---Add it to Feedgen
-#TODO ----Change limit 10 to 30
-#TODO ------Work with Environment variables instead
-#TODO Load to DOCKER to connect to DB
-#           #WHY: 
-#TODO Load to DOCKER for app.py (Flask)
-#TODO ----create package for top 10 downloads
-#TODO quick quick KSKS
