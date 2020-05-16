@@ -18,8 +18,21 @@ Will connect to ODESI database and retrieve the top 10 survey downloaded during 
 **need credentials to connect to db** need a secrets.json file
 
 ```python 
-python top_downloads.py
+#using poetry
+pip install poetry
+poetry run python top_downloads.py
 ```
+To run an example of the app
+```python 
+python app.py
+```
+
+## Screenshots
+This is a mockup, it will only send if one of the services has been down for at least 10 minutes
+<p float="left">
+    <img src="screenshots/screenshot.png" width="200"/>
+</p>
+
 
 
 ### TODO

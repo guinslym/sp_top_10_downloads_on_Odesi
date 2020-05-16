@@ -20,10 +20,6 @@ user = data["USER"]
 password = data["PASSWORD"]
 db = data["DATABASE"]
 
-#Constant
-# environment = env("ENVIRONMENT", "STAGING")
-# if environment == "STAGING":
-
 
 def get_top_downloads_on_odesi_for_last_month(year, month, qty=10):
     #for pymysql query needs to be on one line
@@ -31,10 +27,10 @@ def get_top_downloads_on_odesi_for_last_month(year, month, qty=10):
     
     return sql
 
-with freeze_time("2020-03-14"):
-    this_date = parse('1 month ago')
-    month = this_date.month
-    year = str(this_date.year)
+
+this_date = parse('1 month ago')
+month = this_date.month
+year = str(this_date.year)
 
 sql = get_top_downloads_on_odesi_for_last_month( year, month, qty=20)
 
