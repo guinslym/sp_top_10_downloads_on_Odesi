@@ -15,7 +15,7 @@ Will connect to ODESI database and retrieve the top 10 survey downloaded during 
 ## Usage
 
 
-**need credentials to connect to db** 
+**need credentials to connect to db** need a secrets.json file
 
 ```python 
 python top_downloads.py

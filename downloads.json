@@ -1,0 +1,182 @@
+[
+    {
+        "Survey": "Canadian Community Health Survey, 2015-2016: Annual Component",
+        "Survey ID": "cchs-82M0013-E-2015-2016-Annual-component",
+        "Download Count": 882,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Community Health Survey, 2014: Annual Component",
+        "Survey ID": "cchs-82M0013-E-2014-Annual-component",
+        "Download Count": 364,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Survey of Approaches to Educational Planning, 2002 [Canada]",
+        "Survey ID": "saep_81M0017_E_2002",
+        "Download Count": 358,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Survey of Financial Security, 2012 [Canada]",
+        "Survey ID": "SFS-13M0006-E-2012",
+        "Download Count": 312,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "2016 Census of Population [Canada] Public Use Microdata File (PUMF): Individuals File",
+        "Survey ID": "pumf-98M0001-E-2016-individuals",
+        "Download Count": 302,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Survey of Labour and Income Dynamics, 2007 [Canada]: Cross-Sectional Person File",
+        "Survey ID": "slid_75F0011XIE_E_2007_person-file",
+        "Download Count": 280,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, August 2016 [Canada]",
+        "Survey ID": "lfs-71M0001XCB-E-2016-August",
+        "Download Count": 234,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Market Activity Survey, 1988-1989-1990 [Canada]: Longitudinal Person File (LMAS)",
+        "Survey ID": "lmas-71F0001-E-1988-1990p",
+        "Download Count": 206,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "General Social Survey, Cycle 30, 2016 [Canada]: Canadians at Work and Home",
+        "Survey ID": "gss-12M0030X-E-2016-c-30",
+        "Download Count": 200,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Income Survey, 2017",
+        "Survey ID": "CIS-72M0003-E-2017",
+        "Download Count": 164,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Enquête sociale générale, cycle 30, 2016 [Canada]: Les Canadiens au travail et à la maison",
+        "Survey ID": "esg-12M0030X-F-2016-c-30",
+        "Download Count": 132,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "General Social Survey, Cycle 28, 2014 [Canada]: Victimization, Main File",
+        "Survey ID": "gss-12M0018-E-2014-c-28-vmf",
+        "Download Count": 130,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "2006 Census of Population [Canada] Public Use Microdata File (PUMF): Individuals File (version 2)",
+        "Survey ID": "pumf_95M0028_E_2006_individuals",
+        "Download Count": 124,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "National Graduates Survey, 2018 [Canada]: Class of 2015",
+        "Survey ID": "ngs-81M0011-E-2018",
+        "Download Count": 114,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Community Health Survey, 2012: Mental Health Component",
+        "Survey ID": "cchs-82M0013-E-2012-mental-health",
+        "Download Count": 98,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Enquête sociale générale, cycle 29, 2015 [Canada] : L'emploi du temps, fichier principal",
+        "Survey ID": "ESG-89M0034-F-2015-Cycle29-Principal",
+        "Download Count": 94,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, December 2019 [Canada]",
+        "Survey ID": "LFS-71M0001-E-2019-December",
+        "Download Count": 90,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, January 2020 [Canada]",
+        "Survey ID": "LFS-71M0001-E-2020-January",
+        "Download Count": 88,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Tobacco, Alcohol and Drugs Survey, 2017: Person file",
+        "Survey ID": "CTADS-82M0020-E-2017-person",
+        "Download Count": 84,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "General Social Survey, Cycle 29, 2015 [Canada]: Time Use, Main File",
+        "Survey ID": "gss-89M0034-E-2015-c-29-main",
+        "Download Count": 80,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, November 2019 [Canada]",
+        "Survey ID": "LFS-71M0001-E-2019-November",
+        "Download Count": 80,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Income Survey, 2015",
+        "Survey ID": "CIS-72M0003-E-2015",
+        "Download Count": 68,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Survey of Labour and Income Dynamics, 2011 [Canada]: Person File",
+        "Survey ID": "slid-75M0010XCB-E-2011pr",
+        "Download Count": 62,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, January 2019 [Canada]",
+        "Survey ID": "lfs-71M0001-E-2019-january",
+        "Download Count": 58,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "2016 Census of Population [Canada] Public Use Microdata File (PUMF): Hierarchical File",
+        "Survey ID": "pumf-98M0002-E-2016-hierarchical",
+        "Download Count": 56,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Canadian Election Study, 2015",
+        "Survey ID": "CES-E-2015",
+        "Download Count": 52,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Survey of Household Spending, 2017 [Canada]: Interview File",
+        "Survey ID": "shs-62M0004-E-2017-int",
+        "Download Count": 46,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Enquête sur la santé dans les collectivités canadiennes, 2015-2016: Composante annuelle",
+        "Survey ID": "escc-82M0013-F-2015-2016-composante-annuelle",
+        "Download Count": 46,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Labour Force Survey, February 2019 [Canada]",
+        "Survey ID": "lfs-71M0001-E-2019-february",
+        "Download Count": 40,
+        "Month": "2020-02"
+    },
+    {
+        "Survey": "Recensement de la population, 2016 [Canada] Fichier de micro-données à grande diffusion (FMGD): Fichier des particuliers",
+        "Survey ID": "stc-98M0001-F-2016-particuliers",
+        "Download Count": 38,
+        "Month": "2020-02"
+    }
+]

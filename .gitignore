@@ -109,7 +109,6 @@ schedule_outp*
 unanswered_chats.html
 #*.html
 *.csv
-*.json
 *.db-shm
 *.db-wal
 *.code-workspace
