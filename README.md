@@ -6,7 +6,8 @@
 [![TravisCI](https://travis-ci.org/guinslym/ask_schools.svg?branch=master)](https://travis-ci.org/guinslym/ask_schools)
 
 <hr/>
-### top 10 odesi downloads
+
+## top 10 odesi downloads
 
 <p>
 Will connect to ODESI database and retrieve the top 10 survey downloaded during the previous month. It will create a JSON file containings those downloads.
