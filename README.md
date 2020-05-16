@@ -24,7 +24,7 @@ poetry run python top_downloads.py
 ```
 To run an example of the app
 ```python 
-python app.py
+poetry run python app.py
 ```
 
 ## Screenshots
