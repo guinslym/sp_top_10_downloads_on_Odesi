@@ -7,7 +7,7 @@
 
 <hr/>
 
-## top 10 downloads on odesi 
+## Top 10 downloads on odesi 
 
 <p>
 Will connect to ODESI database and retrieve the top 10 survey downloaded for the last month. It will create a JSON file containings those downloads.
