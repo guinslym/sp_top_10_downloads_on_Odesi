@@ -74,7 +74,7 @@ info-packages:
 .PHONY: github
 github:
 	echo "--On Mac Open this github repository url--"
-	open https://github.com/scholarsportal/sp_ask_service_downtime_sms_alert_script
+	open https://github.com/guinslym/sp_odesi_report_top_10_downloads
 info-github:
 	echo "\nOpen this github repository url \n"
 
