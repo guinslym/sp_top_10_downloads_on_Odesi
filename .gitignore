@@ -107,7 +107,7 @@ schedule_outp*
 .DS_Store
 .vscode/
 unanswered_chats.html
-*.html
+#*.html
 *.csv
 *.json
 *.db-shm

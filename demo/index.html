@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<title>Top 10 odesi downloads jQuery RSS/ATOM Feed Demo</title>
+<style>
+.feedEkList{width:450px; list-style:none outside none;background-color:#FFFFFF; border:1px solid #D3CAD7; padding:4px 6px; color:#3E3E3E;}
+.feedEkList li{border-bottom:1px solid #D3CAD7; padding:5px;}
+.feedEkList li:last-child{border-bottom:none;}
+.itemTitle a{font-weight:bold; color:#4EBAFF !important; text-decoration:none }
+.itemTitle a:hover{ text-decoration:underline }
+.itemDate{font-size:11px;color:#AAAAAA;}
+    body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;background-color: #efefef;font-size: 13px;line-height: 17px !important;}
+    .rssDiv{float: left;padding-right: 35px;}
+    ul{width: 300px !important;}
+    
+</style>
+</head>
+<body>
+<div style="padding: 10px;">
+<h1>Top 10 odesi downloads jQuery RSS/ATOM Feed Demo</h1>
+<div>
+    <div class="rssDiv">
+        <p><strong>Basic Example</strong></p>
+        <div id="divRss"></div>
+        <strong>Code</strong>
+        <pre class="prettyprint">
+            $('#divRss').FeedEk({
+            FeedUrl: 'https://jquery-plugins.net/rss',
+            MaxCount: 2
+            });
+        </pre>
+    </div>
+</div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.1.1/js/FeedEk.js" integrity="sha256-HMsjV7j7AdK/LOsL2So1xXdyJAlX3YuG7UM5kcYkqmE=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+       		$('#divRss').FeedEk({
+				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 3
+			});
+    });
+
+</script>
+</body>
+
+</html>
