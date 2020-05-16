@@ -39,10 +39,17 @@
 <script type="text/javascript">
     $(document).ready(function () {
        		$('#divRss').FeedEk({
-				FeedUrl: 'https://jquery-plugins.net/rss', MaxCount: 3
+				FeedUrl: 'https://jquery-plugins.net/rss', 
+                MaxCount: 3,
+                TitleLinkTarget:'_blank',
+                ShowPubDate:false,
+                ShowDesc:false,
 			});
     });
 
+// http://127.0.0.1:5000/rss
+// https://jquery-plugins.net/rss
+// https://www.globalissues.org/feed
 </script>
 </body>
 
