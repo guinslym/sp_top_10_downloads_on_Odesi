@@ -37,3 +37,4 @@ This is a mockup, it will only send if one of the services has been down for at 
 
 ### TODO
 1. Add Docker
+2. Test
