@@ -2,48 +2,44 @@ from feedgen.feed import FeedGenerator
 from flask import make_response
 from flask import Flask, Response, send_from_directory
 from dateparser import parse
+import json
+
+from environs import Env
+env = Env()
 
 # Create the flask server
 app = Flask(__name__)
 
-downloads = [
-    {
-        'survey_name': "Labour force Survey", 
-        'survey_id': "LFS-9243402-LM" , 
-        'survey_counter': 45, 
-        'url': 'www.google.ca',
-        'downloads_date': "2019-02-20", 
-    },
-    {
-        'survey_name': "Simulation Base Model", 
-        'survey_id': "SMPD/S" , 
-        'survey_counter': 89, 
-        'url': 'www.google.ca',
-        'downloads_date': "2019-02-20", 
-    },
-    {
-        'survey_name': "College graduate", 
-        'survey_id': "GDS-02384-2004" , 
-        'survey_counter': 145, 
-        'url': 'www.google.ca',
-        'downloads_date': "2019-02-20", 
-    }
-]
-
+def get_top_downloads():
+    # Read .env into os.environ
+    env.read_env()
+    environment = env("ENVIRONMENT", "STAGING")
+    
+    if environment == "STAGING":
+        with open('downloads.json') as json_file:
+            downloads = json.load(json_file)
+    else:
+        raise ValueError('A very specific bad thing happened')# throw error 
+    return downloads
 
 @app.route('/rss')
 def rss():
     fg = FeedGenerator()
-    fg.title('Feed title')
-    fg.description('Feed description')
-    fg.link(href='https://awesome.com')
+    fg.title('Odesi top downloads for last month')
+    fg.description('Retrieving at least the top 10 downloads in Odesi during last month')
+    fg.link(href='https://odesi.ca')
 
-    for survey in downloads: 
+    downloads = get_top_downloads()
+    url_root = "https://search1.odesi.ca/#/search/_term_term="
+    for survey in downloads[:20]: 
         fe = fg.add_entry()
-        fe.title(survey['survey_name'])
-        fe.link(href=survey['url'])
-        fe.guid(survey['survey_id'], permalink=False) # Or: fe.guid(survey.url, permalink=True)
-        fe.pubDate(parse(survey['downloads_date'], settings={'TIMEZONE': 'US/Eastern', 'RETURN_AS_TIMEZONE_AWARE': True}))
+        fe.title(survey['Survey'] + " : Total downloads -> " + str(survey['Download Count']))
+        #replace all underscore
+        survey_id_updates = (survey['Survey ID']).replace("_", "/_")
+        fe.link(href= (url_root + survey_id_updates))
+
+        fe.guid(survey['Survey ID'], permalink=False) # Or: fe.guid(survey.url, permalink=True)
+        fe.pubDate(parse(survey['Month'], settings={'TIMEZONE': 'US/Eastern', 'RETURN_AS_TIMEZONE_AWARE': True}))
 
     response = make_response(fg.rss_str())
     response.headers.set('Content-Type', 'application/rss+xml')
