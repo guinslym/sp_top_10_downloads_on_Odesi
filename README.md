@@ -26,7 +26,7 @@ poetry run python top_downloads.py
 
 To run an example of the app
 ```python 
-poetry run python app.py
+poetry run python Flask_app.py
 ```
 
 ## Screenshots
