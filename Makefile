@@ -22,8 +22,27 @@ runserver:
 info-runserver:
 	echo "\nRun a python server\n"
 	
+.PHONY: remove
+remove:
+	echo "removing the ODESI container"
+	docker stop odesi.docker.test
+	docker container rm odesi.docker.test
+info-remove:
+	echo "\nremoving the ODESI container\n"
 
+.PHONY: up
+up:
+	echo "start the ODESI Docker container"
+	bash start.sh
+info-up:
+	echo "\nStart the ODESI Docker container\n"
 
+.PHONY: logs
+logs:
+	echo "Show logs of the ODESI Docker container"
+	docker logs odesi.docker.test
+info-logs:
+	echo "\nShow logs of the ODESI Docker container\n"
 
 .PHONY: setup
 setup:

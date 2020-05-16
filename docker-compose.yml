@@ -6,8 +6,8 @@ services:
       - "32000:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-  app:
-    build: ./app
+  myapp:
+    build: .
     links:
       - db
     ports:
