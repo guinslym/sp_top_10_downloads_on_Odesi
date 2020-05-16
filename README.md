@@ -13,7 +13,7 @@
 Will connect to ODESI database and retrieve the top 10 survey downloaded during the previous month. It will create a JSON file containings those downloads.
 </p>
 
-## Usage
+## Installation & Usage
 
 
 **need credentials to connect to db** need a secrets.json file
@@ -23,19 +23,19 @@ Will connect to ODESI database and retrieve the top 10 survey downloaded during 
 pip install poetry
 poetry run python top_downloads.py
 ```
+
 To run an example of the app
 ```python 
 poetry run python app.py
 ```
 
 ## Screenshots
-This is a mockup, it will only send if one of the services has been down for at least 10 minutes
+This is an example of the app using data in downloads.json
 <p float="left">
     <img src="screenshots/screenshot.png" width="700"/>
 </p>
 
-
-
 ### TODO
 1. Add Docker
 2. Test
+3. Change repo name to add -script
