@@ -10,7 +10,7 @@
 ## Top 10 downloads on odesi 
 
 <p>
-Will connect to ODESI database and retrieve the top 10 survey downloaded for the last month. It will create a JSON file containings those downloads.We can also parse the JSON file to create a RSS Feed see `Flask_app.py`.
+Will connect to ODESI database and retrieve the top 10 survey downloaded for the last month. It will create a JSON file containings those downloads.We can also parse the JSON file to create a RSS Feed see ```Flask_app.py```.
 </p>
 
 ## Installation & Usage
