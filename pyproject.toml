@@ -11,6 +11,7 @@ dateparser = "^0.7.4"
 pymysql = "^0.9.3"
 flask = "^1.1.2"
 environs = "^7.4.0"
+freezegun = "^0.3.15"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

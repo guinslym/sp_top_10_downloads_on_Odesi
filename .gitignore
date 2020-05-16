@@ -113,3 +113,7 @@ unanswered_chats.html
 *.db-shm
 *.db-wal
 *.code-workspace
+
+odesi_tables.py
+*/*__init__.py
+try_mysql*
