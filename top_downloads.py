@@ -14,7 +14,7 @@ from query_helper import clean_decimal_data
 from sp_utils import read_json_file
 from sp_utils import save_result_in_json_file
 
-def get_date(this_date = parse('1 month ago')):
+def get_date(this_date):
     """[summary]
 
     Keyword Arguments:
