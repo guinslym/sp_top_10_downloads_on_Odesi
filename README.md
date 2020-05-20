@@ -36,4 +36,4 @@ This is an example of the app using data in downloads.json
 
 ### TODO
 1. Add Docker
-2. Test
+2. Gitlab integration

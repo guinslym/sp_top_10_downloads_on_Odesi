@@ -76,15 +76,3 @@ tests-3.8:
   tags: [poetry-78]
   variables:
     PYTHON_VERSION: "3.8"
-# Numpy currently not supported
-#test-python-3.8:
-#  <<: *test
-#  image: python:3.8
-
-## Deploy jobs
-#publish:
-#  <<: *deploy
-#  only:
-#    - tags
-#  script:
-#    - poetry publish
