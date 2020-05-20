@@ -1,0 +1,90 @@
+variables:
+  PIP_CACHE_DIR: "${CI_PROJECT_DIR}/.cache/pip"
+
+cache:
+  key: "top-dowloads-${CI_JOB_NAME}"
+  paths:
+    - .cache/pip
+    - .venv
+
+stages:
+  - checks
+  - tests
+  - publish
+  - coverage
+
+.code_changes:
+  rules:
+    - changes:
+      - odesi/*.py
+      - tests/*.py
+
+.changes:
+  rules:
+    - changes:
+      - odesi/*.py
+      - tests/*.py
+      - .gitlab-ci.yml
+      - pyproject.toml
+      - poetry.lock
+
+build:
+  extends: .changes
+  stage: checks
+  script:
+    - poetry build
+    
+format:
+  extends: .code_changes
+  stage: checks
+  image: $DOCKER_IMAGE/3.8:latest
+  script:
+    - black --check odesi tests
+
+# Jobs templates
+
+.install-deps-template: &install-deps
+  before_script:
+    - pip install poetry
+    - poetry --version
+    - poetry config virtualenvs.in-project true
+    - poetry install --verbose
+
+
+.tests:
+  extends: .changes
+  stage: tests
+  image: $DOCKER_IMAGE/$PYTHON_VERSION:latest
+  script:
+    - poetry install
+    - poetry run pytest
+
+tests-3.7-coverage:
+  extends: .tests
+  tags: [poetry-78]
+  script:
+    - poetry install
+    - poetry run pytest --cov silkaj --cov-report html:cov_html
+    - poetry run coverage-badge -o cov_html/coverage.svg
+  artifacts:
+    paths:
+      - cov_html
+    expire_in: 2 days
+
+tests-3.8:
+  extends: .tests
+  tags: [poetry-78]
+  variables:
+    PYTHON_VERSION: "3.8"
+# Numpy currently not supported
+#test-python-3.8:
+#  <<: *test
+#  image: python:3.8
+
+## Deploy jobs
+#publish:
+#  <<: *deploy
+#  only:
+#    - tags
+#  script:
+#    - poetry publish
