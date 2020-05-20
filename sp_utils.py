@@ -1,14 +1,14 @@
 import json
 
 def save_result_in_json_file(filename, data):
-    """[summary]
+    """save result in a json file
 
     Keyword Arguments:
-        filename {str} -- [description] 
-        data {str} -- [description] 
+        filename {str} -- the filename (and path) that the data will be save in
+        data {str} -- the data that I need to save 
 
     Returns:
-        [type] -- [description]
+        Bool -- Wheter the data is save or not
     """
     try:
         #save the data in JSON file so that the Flask app can read it
@@ -20,13 +20,13 @@ def save_result_in_json_file(filename, data):
         return False
 
 def read_json_file(filename):
-    """[summary]
+    """read a json file
 
     Keyword Arguments:
-        filename {str} -- [description])
+        filename {str} -- Reading a JSON file
 
     Returns:
-        [type] -- [description]
+        [dict] -- the contect of the file
     """
     try:
         #reading secrets.json to connect to db
