@@ -83,3 +83,13 @@ push:
 	git push -u origin master
 info-push:
 	echo "\nGit Pushed to master branch repository\n"
+
+.PHONY: dumpfile
+dumpfile:
+	echo "--Dumping all table from ODESI--"
+	mysqldump -uroot -p sp_odesi_practice --single-transaction --no-create-info --no-create-db  > /root/sp_odesi/odesi_all.sql
+	echo "--Dumping only this table OdesiDailyAccess for 2019 and up --"
+	mysqldump -uroot -p sp_odesi_practice --single-transaction --no-create-info --no-create-db  --where "OdesiDailyAccess.date_id > 3213 " OdesiDailyAccess > /root/sp_odesi/odesi.sql
+	echo "--\n\n\nYou will need to replace OdesiDailyAccess on odesi_all.sql with the one in odesi.sql --"
+info-dumpfile:
+	echo "\nGit Pushed to master branch repository\n"

@@ -120,3 +120,4 @@ odesi_tables.py
 try_mysql*
 secrets.json
 poetry.lock
+*.sql
