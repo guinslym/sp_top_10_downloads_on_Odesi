@@ -37,3 +37,4 @@ This is an example of the app using data in downloads.json
 ### TODO
 1. Add Docker
 2. Gitlab CI
+3. Change repo name to 'odesi_reports'
