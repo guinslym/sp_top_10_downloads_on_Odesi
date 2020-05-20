@@ -35,13 +35,14 @@ def get_top_10_odesi_downloads_for_this_month():
     this_date = datetime.doday
     year, month, day = get_date(this_date)
     sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
+    
     file_content =read_json_file("secrets.json")
     connection = get_connection(file_content)
+
     data = execute_this_query(connection, sql)
     data = clean_decimal_data(data)
 
     return data
-    
 
 if __name__ == '__main__':
     data = get_top_10_odesi_downloads_for_this_month
