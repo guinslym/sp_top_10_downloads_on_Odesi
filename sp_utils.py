@@ -1,10 +1,11 @@
 import json
 
-def save_result_in_json_file(filename="downloads.json"):
+def save_result_in_json_file(filename, data):
     """[summary]
 
     Keyword Arguments:
-        filename {str} -- [description] (default: {"downloads.json"})
+        filename {str} -- [description] 
+        data {str} -- [description] 
 
     Returns:
         [type] -- [description]
@@ -12,17 +13,17 @@ def save_result_in_json_file(filename="downloads.json"):
     try:
         #save the data in JSON file so that the Flask app can read it
         with open(filename, 'w', encoding='utf-8') as f:
-            json.dump(result, f, ensure_ascii=False, indent=4)
+            json.dump(data, f, ensure_ascii=False, indent=4)
         return True
     except:
         print("error on filename creation")
         return False
 
-def read_json_file(filename="secrets.json"):
+def read_json_file(filename):
     """[summary]
 
     Keyword Arguments:
-        filename {str} -- [description] (default: {"secrets.json"})
+        filename {str} -- [description])
 
     Returns:
         [type] -- [description]
