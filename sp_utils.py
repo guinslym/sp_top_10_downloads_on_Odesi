@@ -1,6 +1,6 @@
 import json
 
-def save_result_in_json_file(filename, data):
+def save_result_in_json_file(data, filename):
     """save result in a json file
 
     Keyword Arguments:

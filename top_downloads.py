@@ -46,6 +46,6 @@ def get_top_10_odesi_downloads_for_this_month():
 
 if __name__ == '__main__':
     data = get_top_10_odesi_downloads_for_this_month
-    save_result_in_json_file(filename="downloads.json", data)
+    save_result_in_json_file(data, filename="downloads.json")
 
 
