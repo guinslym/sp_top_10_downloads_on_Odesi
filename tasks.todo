@@ -1,0 +1,8 @@
+ODESI:
+    ☐ load new database on SQL
+        ☐ odesi_all.sql
+        ☐ odesi.sql
+
+Docker:
+    ☐ Call mysql from python file
+    ☐ Call Flask app
