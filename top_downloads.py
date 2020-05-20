@@ -7,12 +7,12 @@ import json
 #Python packages to be installed
 from dateparser import parse
 
-from odesi_queries import sql_query_top_downloads_on_odesi_for_last_month
-from query_helper import execute_this_query
-from query_helper import get_connection
-from query_helper import clean_decimal_data
-from sp_utils import read_json_file
-from sp_utils import save_result_in_json_file
+from odesi.odesi_queries import sql_query_top_downloads_on_odesi_for_last_month
+from odesi.query_helper import execute_this_query
+from odesi.query_helper import get_connection
+from odesi.query_helper import clean_decimal_data
+from odesi.sp_utils import read_json_file
+from odesi.sp_utils import save_result_in_json_file
 
 def get_date(this_date):
     """[summary]
