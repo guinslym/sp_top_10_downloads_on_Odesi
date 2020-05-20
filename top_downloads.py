@@ -7,7 +7,11 @@ import json
 #Python packages to be installed
 from dateparser import parse
 
-from odesi_queries import get_top_downloads_on_odesi_for_last_month
+from odesi_queries import sql_query_top_downloads_on_odesi_for_last_month
+from query_helper import execute_this_query
+from query_helper import get_connection
+from query_helper import clean_decimal_data
+from query_helper import 
 
 def get_date(this_date = parse('1 month ago')):
     """[summary]
@@ -26,7 +30,5 @@ def get_date(this_date = parse('1 month ago')):
 
 if __name__ == '__main__':
     this_date = datetime.doday
-    this_day = get_date(this_date)
-    year = this_day.year
-    month = this_day.month
-    sql = get_top_downloads_on_odesi_for_last_month( year, month, qty=20)
+    year, month, day = get_date(this_date)
+    sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
