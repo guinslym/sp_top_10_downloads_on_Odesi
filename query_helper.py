@@ -3,13 +3,13 @@ import pymysql
 import pymysql.cursors
 
 def clean_decimal_data(data):
-    """[summary]
+    """Convert Decimal(number) object to int
 
     Arguments:
-        data {[type]} -- [description]
+        data {list of dict} -- List of Dict containing top downloads
 
     Returns:
-        [type] -- [description]
+        list -- list of dict
     """
     #convert Decimal to Int Type
     for data in result:
@@ -17,13 +17,13 @@ def clean_decimal_data(data):
     return data
 
 def get_connection(data):
-    """[summary]
+    """Connect to db
 
     Arguments:
-        data {[type]} -- [description]
+        data {dict} -- dict of credentials to connect to db
 
     Returns:
-        [type] -- [description]
+        pymsqlConnection -- connection to database
     """
     user = data["USER"]
     password = data["PASSWORD"]
@@ -44,14 +44,15 @@ def get_connection(data):
         print("user:{0}\npass:{1}\ndb:{2}\n".format(user, password, db))
         return False
 
-def execute_this_query(connection):
-    """[summary]
+def execute_this_query(connection, sql):
+    """sql command to execute in db
 
     Arguments:
-        connection {[type]} -- [description]
+        connection {Connection} -- Connection to database
+        sql {string} -- sql querry
 
     Returns:
-        [type] -- [description]
+        List of dict -- list of result found from the database query
     """
     try:
         #run the SQL query

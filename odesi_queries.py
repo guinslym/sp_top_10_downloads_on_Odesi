@@ -1,6 +1,6 @@
 __author__ = "Carlos McGregor and Guinsly Mondésir"
 
-def query_top_downloads_on_odesi_for_last_month(year, month, qty=10):
+def sql_query_top_downloads_on_odesi_for_last_month(year, month, qty=10):
     """[summary]
 
     Keyword Arguments:
