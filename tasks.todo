@@ -1,7 +1,7 @@
 ODESI:
-    ☐ load new database on SQL
-        ☐ odesi_all.sql
-        ☐ odesi.sql
+    ✔ load new database on SQL @done(20-05-20 20:27)
+        ✔ odesi_all.sql @done(20-05-20 20:27)
+        ✔ odesi.sql @done(20-05-20 20:27)
 
 Docker:
     ☐ Call mysql from python file

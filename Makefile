@@ -91,5 +91,50 @@ dumpfile:
 	echo "--Dumping only this table OdesiDailyAccess for 2019 and up --"
 	mysqldump -uroot -p sp_odesi_practice --single-transaction --no-create-info --no-create-db  --where "OdesiDailyAccess.date_id > 3213 " OdesiDailyAccess > /root/sp_odesi/odesi.sql
 	echo "--\n\n\nYou will need to replace OdesiDailyAccess on odesi_all.sql with the one in odesi.sql --"
+	echo "--\n\n\n61 dd on odesi_all.sql for OdesiDailyAccess --"
 info-dumpfile:
-	echo "\nGit Pushed to master branch repository\n"
+	echo "\nDumping all table from ODESI\n"
+
+.PHONY: dumpschema
+dumpschema:
+	echo "--Dumping schema of all table from ODESI--"
+	mysqldump -uroot -p sp_odesi_practice --no-data  > /root/sp_odesi/odesi_schema.sql
+info-dumpschema:
+	echo "\nDumping schema of all table from ODESI\n"
+
+.PHONY: dump-schema-and-data
+dump-schema-and-data:
+	echo "--Dumping schema of all table from ODESI--"
+	mysqldump -uroot -p sp_odesi_practice --no-data  > /root/sp_odesi/odesi_schema.sql
+	echo "--\n\nDumping all table from ODESI--"
+	mysqldump -uroot -p sp_odesi_practice --single-transaction --no-create-info --no-create-db  > /root/sp_odesi/odesi_all.sql
+	echo "--Dumping only this table OdesiDailyAccess for 2019 and up --"
+	mysqldump -uroot -p sp_odesi_practice --single-transaction --no-create-info --no-create-db  --where "OdesiDailyAccess.date_id > 3213 " OdesiDailyAccess > /root/sp_odesi/odesi.sql
+	echo "--\n\n\nYou will need to replace OdesiDailyAccess on odesi_all.sql with the one in odesi.sql --"
+	echo "--\n\n\n61 dd on odesi_all.sql for OdesiDailyAccess --"
+	echo "--\n\n\nload-data-and-schema --"
+info-dump-schema-and-data:
+	echo "\nDumping schema of all table from ODESI\n"
+
+.PHONY: loadschema
+loadschema:
+	echo "--Loading schema of all table from ODESI--"
+	mysql -u root -p sp_odesi < odesi_schema.sql
+info-loadschema:
+	echo "\nLoading schema of all table from ODESI\n"
+
+.PHONY: loaddata
+loaddata:
+	echo "--Loading schema of all table from ODESI--"
+	mysql -u root -p sp_odesi < odesi_all.sql
+info-loaddata:
+	echo "\nLoading schema of all table from ODESI\n"
+
+.PHONY: load-data-and-schema
+load-data-and-schema:
+	echo "--Loading schema data for all table from ODESI--"
+	cat odesi.sql >> odesi_all.sql
+	mysql -u root -p sp_odesi < odesi_schema.sql
+	mysql -u root -p sp_odesi < odesi_all.sql
+info-load-data-and-schema:
+	echo "\nLoading schema data for all table from ODESI\n"
