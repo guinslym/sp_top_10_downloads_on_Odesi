@@ -1,46 +1,15 @@
-FROM python:3.8.1-slim as python-base
+FROM python:3.7.6-buster
+MAINTAINER guinslym
 
-# https://github.com/michael0liver/python-poetry-docker-example/blob/f7241bf6586e99c6c649eba36ca0efd935ea6316/docker/Dockerfile
+RUN mkdir /sp_odesi_report_project/
+COPY ./test-requirements.txt /sp_odesi_report_project/
+# COPY . .
 
-ARG YOUR_ENV
+RUN pip install --upgrade pip
+# RUN pip install -e .
+RUN pip3 install -r /sp_odesi_report_project/test-requirements.txt
 
-ENV YOUR_ENV=${YOUR_ENV} \
-  PYTHONFAULTHANDLER=1 \
-  PYTHONUNBUFFERED=1 \
-  POETRY_HOME="/opt/poetry" \
-  POETRY_VIRTUALENVS_IN_PROJECT=true \
-  POETRY_NO_INTERACTION=1 \
-  PYTHONHASHSEED=random \
-  PIP_NO_CACHE_DIR=off \
-  PIP_DISABLE_PIP_VERSION_CHECK=on \
-  PIP_DEFAULT_TIMEOUT=100 \
-  POETRY_VERSION=1.0.5 \
-  PYSETUP_PATH="/opt/pysetup" \
-  VENV_PATH="/opt/pysetup/.venv"
+WORKDIR /sp_odesi_report_project/
 
-ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
-
-
-# builder-base is used to build dependencies
-FROM python-base as builder-base
-RUN apt-get update \
-    && apt-get install --no-install-recommends -y \
-        curl \
-        build-essential
-
-# Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
-ENV POETRY_VERSION=1.0.5
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-
-# We copy our Python requirements here to cache them
-# and install only runtime deps using poetry
-WORKDIR $PYSETUP_PATH
-COPY ./poetry.lock ./pyproject.toml ./
-RUN poetry install --no-dev  # respects 
-
-WORKDIR /app
-COPY . /app
-
-RUN pip install -r requirements.txt
-
-CMD ["python", "app.py"]
+CMD "pytest"
+ENV PYTHONDONTWRITEBYTECODE=true
