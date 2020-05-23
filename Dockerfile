@@ -20,9 +20,6 @@ ENV YOUR_ENV=${YOUR_ENV} \
 
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
-# RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev && \
-#     apk add --no-cache --update python3 && \
-#     pip3 install --upgrade pip setuptools
 
 # builder-base is used to build dependencies
 FROM python-base as builder-base
@@ -31,28 +28,19 @@ RUN apt-get update \
         curl \
         build-essential
 
-
 # Install Poetry - respects $POETRY_VERSION & $POETRY_HOME
 ENV POETRY_VERSION=1.0.5
 RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
-# System deps:
-RUN pip install "poetry==$POETRY_VERSION"
+# We copy our Python requirements here to cache them
+# and install only runtime deps using poetry
+WORKDIR $PYSETUP_PATH
+COPY ./poetry.lock ./pyproject.toml ./
+RUN poetry install --no-dev  # respects 
 
-# Copy only requirements to cache them in docker layer
-WORKDIR /code
-COPY poetry.lock pyproject.toml /code/
+WORKDIR /app
+COPY . /app
 
-# 'development' stage installs all dev deps and can be used to develop code.
-# For example using docker-compose to mount local volume under /app
-FROM python-base as development
-ENV FASTAPI_ENV=development
+RUN pip install -r requirements.txt
 
-# Copying poetry and venv into image
-COPY --from=builder-base $POETRY_HOME $POETRY_HOME
-COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
-
-# Creating folders, and files for a project:
-COPY . /code
-RUN poetry install
 CMD ["python", "app.py"]

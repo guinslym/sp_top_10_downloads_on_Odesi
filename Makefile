@@ -138,3 +138,17 @@ load-data-and-schema:
 	mysql -u root -p sp_odesi < odesi_all.sql
 info-load-data-and-schema:
 	echo "\nLoading schema data for all table from ODESI\n"
+
+.PHONY: docker-remove-container
+docker-remove-container:
+	echo "\ndocker rm -vf $(docker ps -a -q)"
+	docker rm -vf $(docker ps -a -q)
+info-docker-remove-container:
+	echo "\nRemove all containers\n"
+
+.PHONY: docker-remove-images
+docker-remove-images:
+	echo "\ndocker rmi -f $(docker images -a -q)\n"
+	docker rmi -f $(docker images -a -q)
+info-docker-remove-images:
+	echo "\nRemove all images\n"
