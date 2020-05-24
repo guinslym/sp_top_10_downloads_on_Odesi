@@ -153,7 +153,6 @@ docker-remove-images:
 info-docker-remove-images:
 	echo "\nRemove all images\n"
 
-
 .PHONY: coverage
 coverage:
 	echo "\ncoverage \n"

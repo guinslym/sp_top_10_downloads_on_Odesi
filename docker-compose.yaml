@@ -32,3 +32,4 @@ services:
     volumes:
       - ./odesi_all.sql:/docker-entrypoint-initdb.d/dump.sql
 
+

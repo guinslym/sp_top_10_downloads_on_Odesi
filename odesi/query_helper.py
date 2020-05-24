@@ -68,5 +68,3 @@ def execute_this_query(connection, sql):
     except:
         print("error on query")
         return False
-
-

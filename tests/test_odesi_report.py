@@ -102,17 +102,18 @@ class TestOdesiQueryHelper(object):
         this_day = datetime.datetime.now()
         year, month, day = get_date(this_day)
         sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
-        
+
         data = execute_this_query(connection, sql)
         pytest.set_trace()
         assert isinstance(data[0]['Download Count'], Decimal)
 
         data = clean_decimal_data(data)
+        pytest.set_trace()
         assert isinstance(data[0]['Download Count'], int)
 
 
 class TestDBConnectionFromDocker(object):
-    
+
     @freeze_time("2020-02-14")
     def test_execute_this_query(self):
         file_content =read_json_file(ROOT_DIR+"secrets.json")
@@ -121,7 +122,7 @@ class TestDBConnectionFromDocker(object):
         this_day = datetime.datetime.now()
         year, month, day = get_date(this_day)
         sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
-        
+
         data = execute_this_query(connection, sql)
         assert isinstance(data, list)
         assert isinstance(data[0], dict)
