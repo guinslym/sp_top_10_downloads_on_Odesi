@@ -56,3 +56,5 @@ TOTAL                          355    222    37%
 1. Add Docker
 2. Gitlab CI
 3. Change repo name to 'odesi_reports'
+4. logs in top.downloads.py
+5. feedgenerator
