@@ -6,3 +6,4 @@ ODESI:
 Docker:
     ☐ Call mysql from python file
     ☐ Call Flask app
+    ☐ https://stackoverflow.com/questions/43880026/import-data-sql-mysql-docker-container
