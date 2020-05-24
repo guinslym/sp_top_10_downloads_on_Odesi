@@ -29,3 +29,6 @@ services:
       - MYSQL_PASSWORD=myodesi123
     expose:
       - 3306
+    volumes:
+      - ./odesi_all.sql:/docker-entrypoint-initdb.d/dump.sql
+

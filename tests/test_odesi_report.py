@@ -23,6 +23,7 @@ from odesi.sp_utils import read_json_file
 from odesi.sp_utils import save_result_in_json_file
 
 ROOT_DIR = "/root/sp_odesi/"
+ROOT_DIR = "./"
 
 def test_version():
     assert  __version__ == '0.1.4'
@@ -78,19 +79,32 @@ class TestOdesiQueryHelper(object):
 
     def test_get_connection(self):
         file_content =read_json_file(ROOT_DIR+"secrets.json")
-        connection = get_connection(file_content)
+        connection = pymysql.connect(
+                 host='mariaDB',
+                 user='root',
+                 password='root',
+                 charset='utf8mb4',
+                 cursorclass=pymysql.cursors.DictCursor,
+                 port=3306)
         assert isinstance(connection, pymysql.connections.Connection)
 
     @freeze_time("2020-02-14")
     def test_clean_decimal_data(self):
         file_content =read_json_file(ROOT_DIR+"secrets.json")
-        connection = get_connection(file_content)
+        connection = pymysql.connect(
+                 host='mariaDB',
+                 user='root',
+                 password='root',
+                 charset='utf8mb4',
+                 cursorclass=pymysql.cursors.DictCursor,
+                 port=3306)
 
         this_day = datetime.datetime.now()
         year, month, day = get_date(this_day)
         sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
         
         data = execute_this_query(connection, sql)
+        pytest.set_trace()
         assert isinstance(data[0]['Download Count'], Decimal)
 
         data = clean_decimal_data(data)
@@ -119,7 +133,19 @@ class TestSPUtils(object):
 
     def test_read_json_file_content(self):
             data = read_json_file(ROOT_DIR+"secrets.json")
-            assert "usser" in data.keys()
+            assert "USER" in data.keys()
 
     def test_save_result_in_json_file(self):
         pass
+
+import pymysql
+class TestDBConnectionFromDocker(object):
+    def test_docker(self):
+        connection = pymysql.connect(
+                 host='mariaDB',
+                 user='root',
+                 password='root',
+                 charset='utf8mb4',
+                 cursorclass=pymysql.cursors.DictCursor,
+                 port=3306)
+        assert isinstance(connection, pymysql.connections.Connection)

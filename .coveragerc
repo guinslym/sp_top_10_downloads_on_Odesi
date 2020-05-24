@@ -1,4 +1,2 @@
 [run]
 omit = screenshots
-omit = docker-example 
-omit = __pycache__
