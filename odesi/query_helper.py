@@ -2,7 +2,7 @@ from decimal import *
 import pymysql
 import pymysql.cursors
 
-def clean_decimal_data(data):
+def clean_decimal_data(result):
     """Convert Decimal(number) object to int
 
     Arguments:
@@ -12,9 +12,12 @@ def clean_decimal_data(data):
         list -- list of dict
     """
     #convert Decimal to Int Type
+    new_result = []
     for data in result:
         data['Download Count'] = int(data['Download Count'])
-    return data
+        new_result.append(data)
+
+    return new_result
 
 def get_connection(data):
     """Connect to db
@@ -29,7 +32,7 @@ def get_connection(data):
     password = data["PASSWORD"]
     db = data["DATABASE"]
 
-    # Connect to the database using secrets.json 
+    # Connect to the database using secrets.json
     try:
         connection = pymysql.connect(
             user=user,
@@ -65,3 +68,5 @@ def execute_this_query(connection, sql):
     except:
         print("error on query")
         return False
+
+

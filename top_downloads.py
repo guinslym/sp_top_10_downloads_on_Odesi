@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.1.4'
 
 #Python Standard library
 import datetime
@@ -23,19 +23,19 @@ def get_date(this_date):
     Returns:
         [type] -- [description]
     """
-    this_date = parse('1 month ago')
     month = this_date.month
-    year = str(this_date.year)
+    year = this_date.year
+    day = this_date.day
 
     return [year, month, day]
 
-def get_top_10_odesi_downloads_for_this_month():
+def get_top_10_odesi_downloads_for_this_month(this_date):
     """[summary]
     """
-    this_date = datetime.doday
+    this_date = get_date(this_date)
     year, month, day = get_date(this_date)
     sql = sql_query_top_downloads_on_odesi_for_last_month( year, month, qty=20)
-    
+
     file_content =read_json_file("secrets.json")
     connection = get_connection(file_content)
 

@@ -152,3 +152,11 @@ docker-remove-images:
 	docker rmi -f $(docker images -a -q)
 info-docker-remove-images:
 	echo "\nRemove all images\n"
+
+
+.PHONY: coverage
+coverage:
+	echo "\ncoverage \n"
+	pytest --cov=. tests/
+info-coverage:
+	echo "\ncoverage\n"

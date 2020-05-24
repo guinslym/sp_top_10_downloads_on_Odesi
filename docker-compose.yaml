@@ -2,7 +2,30 @@ version: '3.1'
 services:
   test:
     build: .
+    links:
+      - mariadb
     volumes:
       - .:/sp_odesi_report_project
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sp_odesi
+      - MYSQL_USER=odesi
+      - MYSQL_PASSWORD=myodesi123
     stdin_open: true
+    ports:
+      - 6603:3306
+    depends_on:
+      - mariadb
     tty: true
+  
+  mariadb:
+    image: mariadb:latest
+    restart: unless-stopped
+    container_name: mariadb-odesi
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sp_odesi
+      - MYSQL_USER=odesi
+      - MYSQL_PASSWORD=myodesi123
+    expose:
+      - 3306

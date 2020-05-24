@@ -34,6 +34,24 @@ This is an example of the app using data in downloads.json
     <img src="screenshots/screenshot.png" width="700"/>
 </p>
 
+### coverage
+```
+Name                         Stmts   Miss  Cover
+------------------------------------------------
+Flask_app.py                    38     38     0%
+initialization.py               47     47     0%
+odesi/__init__.py                0      0   100%
+odesi/odesi_queries.py           4      0   100%
+odesi/query_helper.py           30      6    80%
+odesi/sp_utils.py               11      2    82%
+odesi_tables.py                117    117     0%
+tests/__init__.py                0      0   100%
+tests/test_odesi_report.py      81      2    98%
+top_downloads.py                27     10    63%
+------------------------------------------------
+TOTAL                          355    222    37%
+```
+
 ### TODO
 1. Add Docker
 2. Gitlab CI
